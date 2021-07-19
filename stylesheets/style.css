@@ -5,15 +5,15 @@
 
 #container {
     display: grid;
-    grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols),1fr);
-    padding: 5rem;
-    width: 75%;
+    grid-template-rows: repeat(var(--grid-rows), 1fr);
+    padding: 4rem;
+    width: 35vw;
+    height: 35vw;
     margin: auto;
 }
 
-.grid-item {
-    padding: 0rem;
+.grid-item{
     border: 1px solid;
     display: grid;
 }
@@ -22,4 +22,5 @@
     content: "";
     padding-bottom: 100%;
     display: block;
+    grid-area: 1/1/2/2;
 }
