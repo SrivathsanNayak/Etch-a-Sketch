@@ -19,7 +19,7 @@ function createNodeList() {
     let cellNodeList = document.querySelectorAll(".grid-item");
     for (let i = 0; i < cellNodeList.length; i++) {
         cellNodeList[i].addEventListener('mouseover', () => {
-            cellNodeList[i].classList.add('changeColor');
+            cellNodeList[i].classList.add('changeColorToBlack');
         });
     }
 }
