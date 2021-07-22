@@ -5,32 +5,43 @@ const randomButton = document.querySelector("#random-btn");
 const colorPicker = document.querySelector("#color-picker");
 const body = document.querySelector("body");
 
+//Initial setup for grid generation with black color trace
 newGridButton.addEventListener('click', newGrid);
 generateGrid(16, 16);
 let hexCode = "#000";
 
+//clicking on blackButton gives black trace
 blackButton.addEventListener('click', () => {
     hexCode = "#000";
 });
 
+//randomButton gives random color trace
+randomButton.addEventListener('click', () => {
+    hexCode = "#" + Math.floor(Math.random() * 16777215).toString(16);
+});
+
+//colorPicker allows default color picker
+colorPicker.addEventListener('focus', () => {
+    hexCode = colorPicker.value;
+});
+
+/*
+Shortcuts for buttons
+newGridButton - n
+blackButton - b
+randomButton - r
+colorPicker - c
+*/
 body.addEventListener('keydown', function (e) {
     if (e.key === 'b') {
         hexCode = "#000";
     }
 });
 
-randomButton.addEventListener('click', () => {
-    hexCode = "#" + Math.floor(Math.random() * 16777215).toString(16);
-});
-
 body.addEventListener('keydown', function(e) {
     if (e.key === 'r') {
         hexCode = "#" + Math.floor(Math.random() * 16777215).toString(16);
     }
-});
-
-colorPicker.addEventListener('focus', () => {
-    hexCode = colorPicker.value;
 });
 
 body.addEventListener('keypress', function(e) {
@@ -45,6 +56,11 @@ body.addEventListener('keypress', function(e) {
     }
 });
 
+/*
+Function to generate grid based on input obtained
+This appends grid cells to the grid container
+And creates a node list
+*/
 function generateGrid(rows, cols) {
     container.style.setProperty("--grid-rows", rows);
     container.style.setProperty("--grid-cols", cols);
@@ -56,6 +72,11 @@ function generateGrid(rows, cols) {
     createNodeList();
 }
 
+/*
+Node list is created along with background color initialization
+hexCode shows current color for trace
+nodelist is used for multiple grid cells
+*/
 function createNodeList() {
     let cellNodeList = document.querySelectorAll(".grid-item");
     for (let i = 0; i < cellNodeList.length; i++) {
@@ -65,6 +86,9 @@ function createNodeList() {
     }
 }
 
+/*
+Removes grid cells and initializes hexCode with black
+*/
 function removeGrid() {
     document.querySelectorAll(".grid-item").forEach(function (a) {
         a.remove();
@@ -72,6 +96,10 @@ function removeGrid() {
     hexCode = "#000";
 }
 
+/*
+Function for new grid first removes grid
+Then prompts user for new grid input
+*/
 function newGrid() {
     removeGrid();
     let sizeOfGrid = parseInt(prompt("Number of squares per side for new grid?", 16));
