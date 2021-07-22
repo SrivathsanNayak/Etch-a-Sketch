@@ -6,6 +6,25 @@ const colorPickerButton = document.querySelector("#color-picker-btn");
 
 newGridButton.addEventListener('click', newGrid);
 generateGrid(16, 16);
+let hexCode = "#000";
+
+blackButton.addEventListener('click', () => {
+    hexCode = "#000";
+});
+
+randomButton.addEventListener('click', () => {
+    hexCode = "#"+Math.floor(Math.random()*16777215).toString(16);
+});
+
+/*function currentColor() {
+    blackButton.addEventListener('click', () => {
+        return "#000";
+    });
+
+    randomButton.addEventListener('click', () => {
+        return "#"+Math.floor(Math.random()*16777215).toString(16);
+    });
+}*/
 
 function generateGrid(rows, cols) {
     container.style.setProperty("--grid-rows", rows);
@@ -22,8 +41,8 @@ function createNodeList() {
     let cellNodeList = document.querySelectorAll(".grid-item");
     for (let i = 0; i < cellNodeList.length; i++) {
         cellNodeList[i].addEventListener('mouseover', () => {
-            let hexCode = currentColor();
             cellNodeList[i].style.backgroundColor = hexCode;
+            console.log(hexCode);
         });
     }
 }
@@ -32,6 +51,7 @@ function removeGrid() {
     document.querySelectorAll(".grid-item").forEach(function (a) {
         a.remove();
     });
+    hexCode = "#000";
 }
 
 function newGrid() {
@@ -44,12 +64,4 @@ function newGrid() {
     } else {
         alert("Invalid! Please enter a number between 2 and 100");
     }
-}
-
-function currentColor() {
-    blackButton.addEventListener('click', () => {
-        return "#000";
-    });
-
-    return "#000";
 }
