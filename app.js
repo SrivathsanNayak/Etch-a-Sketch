@@ -1,7 +1,7 @@
 const container = document.querySelector("#container");
-const clearGridButton = document.querySelector("#clear-grid");
+const newGridButton = document.querySelector("#new-grid");
 
-clearGridButton.addEventListener('click', clearGrid);
+newGridButton.addEventListener('click', newGrid);
 generateGrid(16, 16);
 
 function generateGrid(rows, cols) {
@@ -30,15 +30,14 @@ function removeGrid() {
     });
 }
 
-function clearGrid() {
-    /*let sizeOfGrid = parseInt(prompt("Number of squares per side for new grid?", 16));
+function newGrid() {
+    removeGrid();
+    let sizeOfGrid = parseInt(prompt("Number of squares per side for new grid?", 16));
     if (sizeOfGrid < 2 || sizeOfGrid > 100) {
         alert("Invalid number! Please enter a number between 2 and 100");
     } else if (sizeOfGrid >= 2 && sizeOfGrid <= 100) {
         generateGrid(sizeOfGrid, sizeOfGrid);
     } else {
-        alert("Invalid number! Please enter a number between 2 and 100");
-    }*/
-    removeGrid();
-    generateGrid(5, 5);
+        alert("Invalid! Please enter a number between 2 and 100");
+    }
 }
