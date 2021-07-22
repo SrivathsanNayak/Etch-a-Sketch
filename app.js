@@ -2,7 +2,7 @@ const container = document.querySelector("#container");
 const newGridButton = document.querySelector("#new-grid");
 const blackButton = document.querySelector("#black-btn");
 const randomButton = document.querySelector("#random-btn");
-const colorPickerButton = document.querySelector("#color-picker-btn");
+const colorPicker = document.querySelector("#color-picker");
 
 newGridButton.addEventListener('click', newGrid);
 generateGrid(16, 16);
@@ -14,6 +14,10 @@ blackButton.addEventListener('click', () => {
 
 randomButton.addEventListener('click', () => {
     hexCode = "#"+Math.floor(Math.random()*16777215).toString(16);
+});
+
+colorPicker.addEventListener('focus', () => {
+    hexCode = colorPicker.value;
 });
 
 function generateGrid(rows, cols) {
@@ -32,7 +36,6 @@ function createNodeList() {
     for (let i = 0; i < cellNodeList.length; i++) {
         cellNodeList[i].addEventListener('mouseover', () => {
             cellNodeList[i].style.backgroundColor = hexCode;
-            console.log(hexCode);
         });
     }
 }
@@ -47,11 +50,11 @@ function removeGrid() {
 function newGrid() {
     removeGrid();
     let sizeOfGrid = parseInt(prompt("Number of squares per side for new grid?", 16));
-    if (sizeOfGrid < 2 || sizeOfGrid > 100) {
-        alert("Invalid number! Please enter a number between 2 and 100");
-    } else if (sizeOfGrid >= 2 && sizeOfGrid <= 100) {
+    if (sizeOfGrid < 2 || sizeOfGrid > 50) {
+        alert("Invalid number! Please enter a number between 2 and 50");
+    } else if (sizeOfGrid >= 2 && sizeOfGrid <= 50) {
         generateGrid(sizeOfGrid, sizeOfGrid);
     } else {
-        alert("Invalid! Please enter a number between 2 and 100");
+        alert("Invalid! Please enter a number between 2 and 50");
     }
 }
