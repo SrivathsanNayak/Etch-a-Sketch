@@ -16,16 +16,6 @@ randomButton.addEventListener('click', () => {
     hexCode = "#"+Math.floor(Math.random()*16777215).toString(16);
 });
 
-/*function currentColor() {
-    blackButton.addEventListener('click', () => {
-        return "#000";
-    });
-
-    randomButton.addEventListener('click', () => {
-        return "#"+Math.floor(Math.random()*16777215).toString(16);
-    });
-}*/
-
 function generateGrid(rows, cols) {
     container.style.setProperty("--grid-rows", rows);
     container.style.setProperty("--grid-cols", cols);
