@@ -1,5 +1,8 @@
 const container = document.querySelector("#container");
 const newGridButton = document.querySelector("#new-grid");
+const blackButton = document.querySelector("#black-btn");
+const randomButton = document.querySelector("#random-btn");
+const colorPickerButton = document.querySelector("#color-picker-btn");
 
 newGridButton.addEventListener('click', newGrid);
 generateGrid(16, 16);
@@ -19,7 +22,8 @@ function createNodeList() {
     let cellNodeList = document.querySelectorAll(".grid-item");
     for (let i = 0; i < cellNodeList.length; i++) {
         cellNodeList[i].addEventListener('mouseover', () => {
-            cellNodeList[i].classList.add('changeColorToBlack');
+            let hexCode = currentColor();
+            cellNodeList[i].style.backgroundColor = hexCode;
         });
     }
 }
@@ -40,4 +44,12 @@ function newGrid() {
     } else {
         alert("Invalid! Please enter a number between 2 and 100");
     }
+}
+
+function currentColor() {
+    blackButton.addEventListener('click', () => {
+        return "#000";
+    });
+
+    return "#000";
 }
