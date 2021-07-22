@@ -37,7 +37,13 @@ body.addEventListener('keypress', function(e) {
     if (e.key === 'c') {
         hexCode = colorPicker.value;
     }
-})
+});
+
+body.addEventListener('keypress', function(e) {
+    if (e.key === 'n') {
+        newGrid();
+    }
+});
 
 function generateGrid(rows, cols) {
     container.style.setProperty("--grid-rows", rows);
