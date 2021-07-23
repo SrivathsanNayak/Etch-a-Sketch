@@ -28,6 +28,8 @@ body {
     width: 35vw;
     height: 35vw;
     margin: auto;
+    border: 5px double #343A40;
+    border-radius: 5px;
 }
 
 .grid-item {
@@ -45,9 +47,19 @@ body {
 /*Add dark mode and help text later*/
 
 button {
+    font-size: 1rem;
+    font-weight: 600;
+    background: #F6C6EA;
     padding: 0.5rem;
     border-radius: 5px;
+    border: 5px double #FF94CC; 
     text-align: center;
+    cursor: pointer;
+    transition: all 0.4s;
+}
+
+button:hover {
+    background: #FFF1F1;
 }
 
 #new-grid {
@@ -69,4 +81,9 @@ button {
 
 #colors input {
     margin: 0 1rem;
+    cursor: pointer;
+}
+
+span {
+    font-weight: 600;
 }
