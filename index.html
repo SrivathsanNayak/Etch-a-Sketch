@@ -12,23 +12,29 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 </head>
 
 <body>
     <button id="new-grid">New Grid</button>
+        <span class="material-icons" onclick="helpOn()">
+            help
+        </span>
     <div id="container"></div>
-    <div id="help-card">
-        <p><strong>New Grid (n)</strong> to create a blank grid</p>
-        <p><strong>Black (b)</strong> for a black-coloured trace</p>
-        <p><strong>Random (r)</strong> for a random-coloured trace</p>
-        <p><strong>Color picker (c)</strong> to choose trace color</p>
+    <div id="help-card" onclick="helpOff()">
+        <div id="help-card-text">
+        <p><strong><em>New Grid (n)</em></strong> to create a blank grid</p>
+        <p><strong><em>Black (b)</em></strong> for a black-coloured trace</p>
+        <p><strong><em>Random (r)</em></strong> for a random-coloured trace</p>
+        <p><strong><em>Color picker (c)</em></strong> to choose trace color</p>
+        </div>
     </div>
     <div id="colors">
         <button id="black-btn">Black</button>
         <button id="random-btn">Random</button>
         <input type="color" id="color-picker" name="color-picker" value="#cff">
-        <label for="color-picker"><span>Color Picker</span></label>
+        <label for="color-picker"><span id="color-picker-span">Color Picker</span></label>
     </div>
     <script src="app.js"></script>
 </body>

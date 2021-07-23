@@ -111,3 +111,15 @@ function newGrid() {
         alert("Invalid! Please enter a number between 2 and 75");
     }
 }
+
+/*
+Functions for toggling help guide on and off
+*/
+
+function helpOn() {
+    document.querySelector("#help-card").style.display = "block";
+}
+
+function helpOff() {
+    document.querySelector("#help-card").style.display = "none";
+}
