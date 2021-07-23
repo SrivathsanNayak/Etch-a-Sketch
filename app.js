@@ -115,7 +115,6 @@ function newGrid() {
 /*
 Functions for toggling help guide on and off
 */
-
 function helpOn() {
     document.querySelector("#help-card").style.display = "block";
 }

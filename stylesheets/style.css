@@ -62,6 +62,9 @@ Activated when clicked on help button
     cursor: pointer;
 }
 
+/*
+Centering help card text
+*/
 #help-card-text {
     position: absolute;
     top: 45%;
@@ -76,8 +79,6 @@ Activated when clicked on help button
 #help-card-text p {
     padding: 1rem 0;
 }
-
-/*Add dark mode*/
 
 button {
     font-size: 1rem;
@@ -128,4 +129,10 @@ span.material-icons {
 
 #color-picker-span {
     font-weight: 600;
+}
+
+@media screen and (max-width: 992px) {
+    #help-card-text {
+        font-size: 1rem;
+    }
 }
