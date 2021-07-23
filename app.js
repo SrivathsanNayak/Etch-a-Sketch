@@ -103,11 +103,11 @@ Then prompts user for new grid input
 function newGrid() {
     removeGrid();
     let sizeOfGrid = parseInt(prompt("Number of squares per side for new grid?", 16));
-    if (sizeOfGrid < 2 || sizeOfGrid > 50) {
-        alert("Invalid number! Please enter a number between 2 and 50");
-    } else if (sizeOfGrid >= 2 && sizeOfGrid <= 50) {
+    if (sizeOfGrid < 2 || sizeOfGrid > 75) {
+        alert("Invalid number! Please enter a number between 2 and 75");
+    } else if (sizeOfGrid >= 2 && sizeOfGrid <= 75) {
         generateGrid(sizeOfGrid, sizeOfGrid);
     } else {
-        alert("Invalid! Please enter a number between 2 and 50");
+        alert("Invalid! Please enter a number between 2 and 75");
     }
 }
